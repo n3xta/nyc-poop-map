@@ -1,21 +1,22 @@
-
 window.onload = () => {
   console.log('script has loaded')
 };
 
 
 // Map creation and initialization for the map page
-function initMap(poopData) {
+function initMap(poopData, mapTilerApiKey) {
   // Center on Brooklyn, NY
   const brooklynCoords = [40.6782, -73.9442];
+  
+  // Set MapTiler API key
+  maptilersdk.config.apiKey = mapTilerApiKey;
   
   // Create map centered on Brooklyn
   const map = L.map('map').setView(brooklynCoords, 13);
   
-  // Add OpenStreetMap tile layer
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-    maxZoom: 19
+  // Add MapTiler layer with custom toner-v2 style
+  L.maptilerLayer({
+    style: `https://api.maptiler.com/maps/toner-v2/style.json?key=${mapTilerApiKey}`
   }).addTo(map);
   
   // Custom poop icon
@@ -39,17 +40,19 @@ function initMap(poopData) {
 }
 
 // Map for location selection on the submit page
-function initSelectionMap() {
+function initSelectionMap(mapTilerApiKey) {
   // Center on Brooklyn, NY
   const brooklynCoords = [40.6782, -73.9442];
+  
+  // Set MapTiler API key
+  maptilersdk.config.apiKey = mapTilerApiKey;
   
   // Create map centered on Brooklyn
   const map = L.map('selection-map').setView(brooklynCoords, 13);
   
-  // Add OpenStreetMap tile layer
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-    maxZoom: 19
+  // Add MapTiler layer with custom toner-v2 style
+  L.maptilerLayer({
+    style: `https://api.maptiler.com/maps/toner-v2/style.json?key=${mapTilerApiKey}`
   }).addTo(map);
   
   // Create a marker that will be movable

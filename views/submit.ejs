@@ -30,7 +30,10 @@
 <script src="/js/map.js"></script>
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-    // Initialize the selection map
-    initSelectionMap();
+    // Get the MapTiler API key
+    const mapTilerApiKey = '<%= mapTilerApiKey %>';
+    
+    // Initialize the selection map with the MapTiler API key
+    initSelectionMap(mapTilerApiKey);
   });
 </script> 

@@ -27,8 +27,9 @@
   document.addEventListener('DOMContentLoaded', function() {
     // Get the poop data from the server
     const poopData = JSON.parse('<%- poopData %>');
+    const mapTilerApiKey = '<%= mapTilerApiKey %>';
     
-    // Initialize the map with the poop data
-    initMap(poopData);
+    // Initialize the map with the poop data and MapTiler API key
+    initMap(poopData, mapTilerApiKey);
   });
 </script> 
