@@ -1,0 +1,34 @@
+<h1>Brooklyn Poop Map</h1>
+
+<div class="map-intro">
+  <p>
+    This map shows all reported dog waste sightings across Brooklyn. 
+    Click on any marker to view details about the report.
+  </p>
+  <p>
+    Don't see your area? <a href="/submit">Submit a report</a> to add to our database.
+  </p>
+</div>
+
+<div class="map-container">
+  <div id="map"></div>
+</div>
+
+<div class="map-legend">
+  <h3>Map Legend</h3>
+  <div class="legend-item">
+    <img src="https://cdn-icons-png.flaticon.com/512/4481/4481132.png" alt="Poop icon" width="24">
+    <span>Reported dog waste</span>
+  </div>
+</div>
+
+<script src="/js/map.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Get the poop data from the server
+    const poopData = JSON.parse('<%- poopData %>');
+    
+    // Initialize the map with the poop data
+    initMap(poopData);
+  });
+</script> 

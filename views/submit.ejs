@@ -1,0 +1,36 @@
+<h1>Report a Poop Sighting</h1>
+
+<div class="form-container">
+  <p>
+    Please select the location where you spotted dog waste by clicking on the map below or by using the 
+    "Use My Location" button. Then add any details about the sighting.
+  </p>
+  
+  <div id="selection-map"></div>
+  
+  <form action="/submit" method="POST">
+    <input type="hidden" id="lat" name="lat" required>
+    <input type="hidden" id="lng" name="lng" required>
+    
+    <div class="form-group">
+      <button type="button" id="geolocate" class="location-button">Use My Location</button>
+    </div>
+    
+    <div class="form-group">
+      <label for="note">Description (optional):</label>
+      <textarea id="note" name="note" placeholder="E.g., 'Large pile near the fire hydrant' or 'Multiple small piles on the sidewalk'"></textarea>
+    </div>
+    
+    <div class="form-group">
+      <button type="submit">Submit Report</button>
+    </div>
+  </form>
+</div>
+
+<script src="/js/map.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Initialize the selection map
+    initSelectionMap();
+  });
+</script> 

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brooklyn Poop Map</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+        integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+        crossorigin="">
+  <!-- Leaflet JavaScript -->
+  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+          integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+          crossorigin=""></script>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Brooklyn Poop Map</h1>
+      <p>Tracking Brooklyn's Dog Poop Problem, One Pile at a Time</p>
+    </div>
+  </header>
+  
+  <nav>
+    <div class="container">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/submit">Report Poop</a></li>
+        <li><a href="/map">View Map</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+  <main>
+    <div class="container">
+      <%- body %>
+    </div>
+  </main>
+  
+  <footer>
+    <div class="container">
+      <p>&copy; <%= new Date().getFullYear() %> Brooklyn Poop Map - A community service project</p>
+    </div>
+  </footer>
+</body>
+</html> 
