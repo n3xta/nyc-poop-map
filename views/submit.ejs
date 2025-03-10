@@ -1,9 +1,14 @@
-<h1>Report a Poop Sighting</h1>
+<div class="headline-box">
+  <h2>DOCUMENT A WASTE SIGHTING</h2>
+</div>
 
+<div class="technical-label">LOCATION SELECTION INTERFACE</div>
 <div class="form-container">
-  <p>
-    Please select the location where you spotted dog waste by clicking on the map below or by using the 
-    "Use My Location" button. Then add any details about the sighting.
+  <div class="ascii-line">──── TARGETING COORDINATES ────</div>
+  
+  <p class="dot-matrix">
+    Select the precise location where you observed waste by clicking on the map below or by using the
+    geolocation feature to pinpoint your current position.
   </p>
   
   <div id="selection-map"></div>
@@ -12,19 +17,52 @@
     <input type="hidden" id="lat" name="lat" required>
     <input type="hidden" id="lng" name="lng" required>
     
-    <div class="form-group">
-      <button type="button" id="geolocate" class="location-button">Use My Location</button>
+    <div class="form-group" style="margin-top: 1rem;">
+      <button type="button" id="geolocate" class="location-button">
+        <span class="coordinates">[ USE CURRENT LOCATION ]</span>
+      </button>
+    </div>
+    
+    <div class="wireframe-box" style="margin: 2rem 0;">
+      <div class="technical-label">DESCRIPTIVE DATA</div>
+      <div class="form-group">
+        <label for="note">INCIDENT DETAILS:</label>
+        <textarea id="note" name="note" placeholder="Provide any relevant details about the waste sighting (size, condition, location context, etc.)"></textarea>
+      </div>
     </div>
     
     <div class="form-group">
-      <label for="note">Description (optional):</label>
-      <textarea id="note" name="note" placeholder="E.g., 'Large pile near the fire hydrant' or 'Multiple small piles on the sidewalk'"></textarea>
-    </div>
-    
-    <div class="form-group">
-      <button type="submit">Submit Report</button>
+      <button type="submit">SUBMIT REPORT</button>
     </div>
   </form>
+</div>
+
+<div class="two-column" style="margin-top: 3rem;">
+  <div class="column">
+    <div class="section">
+      <h3 class="section-headline">DATA COLLECTION PROTOCOL</h3>
+      <ol>
+        <li>Identify waste sighting</li>
+        <li>Navigate to this reporting interface</li>
+        <li>Pinpoint exact coordinates</li>
+        <li>Document relevant details</li>
+        <li>Submit to central database</li>
+      </ol>
+    </div>
+  </div>
+  
+  <div class="column">
+    <div class="section">
+      <h3 class="section-headline">PRIVACY NOTICE</h3>
+      <p>
+        All submissions are anonymous. Location data is used solely for mapping purposes and no personal
+        identifiers are collected or stored.
+      </p>
+      <p class="inverted">
+        COORDINATES + DESCRIPTION ONLY
+      </p>
+    </div>
+  </div>
 </div>
 
 <script src="/js/map.js"></script>

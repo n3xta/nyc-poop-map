@@ -26,7 +26,7 @@ app.use(express.json());
 
 // Routes
 app.get('/', (req, res) => {
-  res.render('index');
+  res.render('index', { poopCount: poopData.length });
 });
 
 app.get('/submit', (req, res) => {

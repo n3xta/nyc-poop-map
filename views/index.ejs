@@ -1,39 +1,58 @@
-<div class="hero">
-  <h1>Welcome to the Brooklyn Poop Map!</h1>
-  <p>
-    Help make Brooklyn cleaner by reporting dog poop sightings in your neighborhood.
-    Together, we can raise awareness about this common problem and encourage responsible pet ownership.
-  </p>
-  <a href="/submit" class="cta-button">Report a Poop Sighting</a>
+<div class="headline-box">
+  <h2 class="huge-title">THE SIDEWALK IS A MINEFIELD</h2>
 </div>
 
-<section class="info-section">
-  <h2>Why This Matters</h2>
-  <p>
-    Dog waste left on sidewalks, in parks, and public spaces is more than just an annoyance—it's a public health concern.
-    Unattended dog waste can:
-  </p>
-  <ul>
-    <li>Transmit diseases and parasites</li>
-    <li>Pollute our waterways when washed into storm drains</li>
-    <li>Create slip hazards for pedestrians</li>
-    <li>Make our beautiful Brooklyn neighborhoods less pleasant to walk through</li>
-  </ul>
-  
-  <h2>How It Works</h2>
-  <p>
-    Our community-driven map allows residents to:
-  </p>
-  <ol>
-    <li>Report poop sightings with location and description</li>
-    <li>View areas with high concentrations of reported waste</li>
-    <li>Raise awareness about neighborhood cleanliness</li>
-  </ol>
-  
-  <h2>Join the Movement</h2>
-  <p>
-    By participating in the Brooklyn Poop Map project, you're taking an active role in improving our community.
-    Every report helps build a clearer picture of where efforts are needed most.
-  </p>
-  <a href="/map" class="cta-button">View the Map</a>
-</section> 
+<div class="two-column">
+  <div class="column">
+    <div class="section">
+      <h3 class="section-headline">THE COMMUNITY</h3>
+      <!-- <div class="wireframe-box"> -->
+        <div>
+        <p>
+          New York is a city of many things: ambition, culture, overpriced oat milk lattes. But most of all: Surprises. Some delightful (like a jazz trio in the subway), some less so (like… the thing you just stepped on). <br><br>
+          Brooklyn Poop Map is the only (up to 3/9/2025) hyper-local, community-driven, and 100% unnecessary solution to this urban dilemma. Our team of unpaid, unqualified experts (read: random internet users) are mapping the menace, one turd at a time.
+        </p>
+      </div>
+      <div class="technical-stats">
+        <div class="technical-label">TOTAL REPORTS</div>
+        <div class="stat-counter"><%= poopCount %></div>
+        <div class="stat-label">DOCUMENTED INSTANCES</div>
+      </div>
+      <a href="/submit" class="nav-link" style="margin-top: 1.5rem; display: inline-block;">REPORT SIGHTING</a>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="section">
+      <h3 class="section-headline">FAQ</h3>
+        <p class="inverted">Q: Is this a joke?</p>
+        <p>A: We wish.</p>
+        <p class="inverted">Q: Who is responsible for cleaning this up?</p>
+        <p>A: Great question. We’d love to know too.</p>
+        <p class="inverted">Q: Do you track human poop?</p>
+        <p>A: Listen. If you have to ask, you already know the answer.</p>
+        <p class="inverted">Q: How accurate is this map?</p>
+        <p>A: As accurate as the people of Brooklyn are honest.</p>
+    </div>
+
+    <div class="section">
+      <h3 class="section-headline">HOW IT WORKS</h3>
+      <ol>
+        <li>Navigate to the <span class="inverted">REPORT</span> page</li>
+        <li>Allow geolocation or manually select a point on the map</li>
+        <li>Add optional descriptive details</li>
+        <li>Submit your report to the database</li>
+        <li>View all reports on the <span class="inverted">MAP</span> page</li>
+      </ol>
+      
+      <div class="ascii-line">
+        +------------+<br>
+        |  40.6782°N |<br>
+        |  73.9442°W |<br>
+        +------------+
+      </div>
+      
+      <a href="/map" class="nav-link" style="margin-top: 1.5rem; display: inline-block;">VIEW THE MAP</a>
+    </div>
+  </div>
+</div> 

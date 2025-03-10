@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Brooklyn Poop Map</title>
+  <!-- Radio Grotesk Font -->
+  <link rel="stylesheet" href="https://use.typekit.net/xcn8urd.css">
   <link rel="stylesheet" href="/css/styles.css">
   <!-- Leaflet CSS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
@@ -20,32 +22,46 @@
   <script src="https://cdn.maptiler.com/leaflet-maptilersdk/v1.0.0/leaflet-maptilersdk.js"></script>
 </head>
 <body>
-  <header>
-    <div class="container">
-      <h1>Brooklyn Poop Map</h1>
-      <p>Tracking Brooklyn's Dog Poop Problem, One Pile at a Time</p>
+  <div class="grid-background"></div>
+  
+  <header class="site-header">
+    <div class="header-grid">
+      <div class="site-title-block">
+        <h1 class="site-title">BROOKLYN POOP MAP</h1>
+        <p class="site-subtitle">TRACKING STREET WASTE SINCE 2025</p>
+      </div>
+      <div class="coordinate-block">
+        <div class="coordinates">
+          <span>40.6782° N, 73.9442° W</span>
+        </div>
+      </div>
     </div>
   </header>
   
-  <nav>
-    <div class="container">
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/submit">Report Poop</a></li>
-        <li><a href="/map">View Map</a></li>
+  <nav class="main-nav">
+    <div class="nav-container">
+      <ul class="nav-items">
+        <li><a href="/" class="nav-link">HOME</a></li>
+        <li><a href="/submit" class="nav-link">REPORT</a></li>
+        <li><a href="/map" class="nav-link">MAP</a></li>
       </ul>
     </div>
   </nav>
   
-  <main>
-    <div class="container">
+  <main class="main-content">
+    <div class="content-grid">
       <%- body %>
     </div>
   </main>
   
-  <footer>
-    <div class="container">
-      <p>&copy; <%= new Date().getFullYear() %> Brooklyn Poop Map - A community service project</p>
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="copyright-block">
+        <p class="copyright">&copy; <%= new Date().getFullYear() %> BROOKLYN POOP MAP</p>
+      </div>
+      <div class="footer-note">
+        <p class="footer-text">A COMMUNITY SERVICE PROJECT // DATA-DRIVEN URBAN INTERVENTION</p>
+      </div>
     </div>
   </footer>
 </body>
