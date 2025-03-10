@@ -1,8 +1,6 @@
-<div class="headline-box">
-  <h2>BROOKLYN WASTE DISTRIBUTION MAP</h2>
-</div>
-
-<div class="technical-label">GEOSPATIAL VISUALIZATION SYSTEM</div>
+<!-- <div class="headline-box">
+  <h2>BROOKLYN POOP MAP</h2>
+</div> -->
 
 <div class="map-grid">
   <div class="map-content">
@@ -22,7 +20,7 @@
     
     <div class="two-column" style="margin-top: 1rem;">
       <div class="column" style="border-left: none; padding-left: 0;">
-        <a href="/submit" class="nav-link" style="display: inline-block;">+ ADD NEW REPORT</a>
+        <a href="/submit" class="button-link" style="display: inline-block;">+ ADD NEW REPORT</a>
       </div>
       <div class="column" style="text-align: right;">
         <div class="technical-label">LAST UPDATED: <%= new Date().toLocaleString() %></div>
@@ -71,10 +69,9 @@
   document.addEventListener('DOMContentLoaded', function() {
     // Get the poop data from the server
     const poopData = JSON.parse('<%- poopData %>');
-    const mapTilerApiKey = '<%= mapTilerApiKey %>';
     
-    // Initialize the map with the poop data and MapTiler API key
-    const map = initMap(poopData, mapTilerApiKey);
+    // Initialize the map with the poop data
+    const map = initMap(poopData);
     
     // Update stats counter
     document.querySelectorAll('.stat-counter').forEach(counter => {

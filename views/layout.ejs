@@ -4,38 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Brooklyn Poop Map</title>
-  <!-- Radio Grotesk Font -->
-  <link rel="stylesheet" href="https://use.typekit.net/xcn8urd.css">
   <link rel="stylesheet" href="/css/styles.css">
-  <!-- Leaflet CSS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
         integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
         crossorigin="">
-  <!-- Leaflet JavaScript -->
   <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
           integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
           crossorigin=""></script>
-  <!-- MapTiler SDK -->
   <script src="https://cdn.maptiler.com/maptiler-sdk-js/v1.2.0/maptiler-sdk.umd.min.js"></script>
   <link href="https://cdn.maptiler.com/maptiler-sdk-js/v1.2.0/maptiler-sdk.css" rel="stylesheet" />
-  <!-- MapTiler Leaflet Plugin -->
   <script src="https://cdn.maptiler.com/leaflet-maptilersdk/v1.0.0/leaflet-maptilersdk.js"></script>
+  <script src="/js/map.js"></script>
 </head>
 <body>
   <div class="grid-background"></div>
   
   <header class="site-header">
-    <div class="header-grid">
       <div class="site-title-block">
-        <h1 class="site-title">BROOKLYN POOP MAP</h1>
-        <p class="site-subtitle">TRACKING STREET WASTE SINCE 2025</p>
+        <h1 class="site-title">THE WATCH YOUR STEP SOCIETY</h1>
+        <p class="site-subtitle">Tracking the City's Most Unwanted Landmarks Since 2025</p>
       </div>
-      <div class="coordinate-block">
-        <div class="coordinates">
-          <span>40.6782° N, 73.9442° W</span>
-        </div>
-      </div>
-    </div>
   </header>
   
   <nav class="main-nav">
@@ -57,10 +45,10 @@
   <footer class="site-footer">
     <div class="footer-grid">
       <div class="copyright-block">
-        <p class="copyright">&copy; <%= new Date().getFullYear() %> BROOKLYN POOP MAP</p>
+        <p class="copyright">&copy; <%= new Date().getFullYear() %> BROOKLYN POOP MAP | Networked Media Project</p>
       </div>
       <div class="footer-note">
-        <p class="footer-text">A COMMUNITY SERVICE PROJECT // DATA-DRIVEN URBAN INTERVENTION</p>
+        <p class="footer-text">Brooklyn Poop Map is not responsible for any traumatic sidewalk experiences. If you believe you have encountered an unmarked specimen, please contact your local representative (or just yell into the void like the rest of us).</p>
       </div>
     </div>
   </footer>

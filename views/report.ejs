@@ -1,0 +1,61 @@
+<div class="headline-box">
+    <h2>REPORT POOP SIGHTED</h2>
+  </div>
+  
+  <div class="form-container">
+    <div id="selection-map"></div>
+    
+    <form action="/submit" method="POST">
+      <input type="hidden" id="lat" name="lat" required>
+      <input type="hidden" id="lng" name="lng" required>
+      
+      <div class="form-group" style="display: flex; align-items: center; gap: 5px; margin-top: 15px;">
+        <p style="margin: 0;"><strong>Click on the map above</strong> or</p>
+        <button type="button" id="geolocate" class="inline-link">use current location</button>
+      </div>
+      
+      <p><br>Incident details if you'd like:</p>
+      <div class="form-group">
+        <textarea id="note" name="note" placeholder="Seriously you can leave this blank"></textarea>
+      </div>
+      <br>
+      <div class="form-group">
+        <button type="submit" class="styled-button">SUBMIT (I solemnly swear that I have witnessed this in the last 24 hours.)</button>
+      </div>
+    </form>
+  </div>
+  
+  <div class="two-column" style="margin-top: 3rem;">
+    <div class="column">
+      <div class="section">
+        <h3 class="section-headline">DATA COLLECTION PROTOCOL</h3>
+        <ol>
+          <li>Identify waste sighting</li>
+          <li>Navigate to this reporting interface</li>
+          <li>Pinpoint exact coordinates</li>
+          <li>Document relevant details</li>
+          <li>Submit to central database</li>
+        </ol>
+      </div>
+    </div>
+    
+    <div class="column">
+      <div class="section">
+        <h3 class="section-headline">PRIVACY NOTICE</h3>
+        <p>
+          All submissions are anonymous. Location data is used solely for mapping purposes and no personal
+          identifiers are collected or stored.
+        </p>
+        <p class="inverted">
+          COORDINATES + DESCRIPTION ONLY
+        </p>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Initialize the selection map
+      initSelectionMap();
+    });
+  </script> 

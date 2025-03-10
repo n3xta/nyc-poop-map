@@ -4,10 +4,6 @@ const expressLayouts = require('express-ejs-layouts');
 const app = express();
 const port = process.env.PORT || 3000;
 
-// MapTiler API key
-const mapTilerApiKey = 'SDAH1HS7z8VGHOhYwhFv';
-app.locals.mapTilerApiKey = mapTilerApiKey;
-
 // Store poop data in memory
 let poopData = [];
 
@@ -30,7 +26,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/submit', (req, res) => {
-  res.render('submit', { mapTilerApiKey: app.locals.mapTilerApiKey });
+  res.render('submit');
 });
 
 app.post('/submit', (req, res) => {
@@ -50,8 +46,7 @@ app.post('/submit', (req, res) => {
 
 app.get('/map', (req, res) => {
   res.render('map', { 
-    poopData: JSON.stringify(poopData),
-    mapTilerApiKey: app.locals.mapTilerApiKey
+    poopData: JSON.stringify(poopData)
   });
 });
 

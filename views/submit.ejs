@@ -1,38 +1,26 @@
 <div class="headline-box">
-  <h2>DOCUMENT A WASTE SIGHTING</h2>
+  <h2>REPORT POOP SIGHTED</h2>
 </div>
 
-<div class="technical-label">LOCATION SELECTION INTERFACE</div>
 <div class="form-container">
-  <div class="ascii-line">──── TARGETING COORDINATES ────</div>
-  
-  <p class="dot-matrix">
-    Select the precise location where you observed waste by clicking on the map below or by using the
-    geolocation feature to pinpoint your current position.
-  </p>
-  
   <div id="selection-map"></div>
   
   <form action="/submit" method="POST">
     <input type="hidden" id="lat" name="lat" required>
     <input type="hidden" id="lng" name="lng" required>
     
-    <div class="form-group" style="margin-top: 1rem;">
-      <button type="button" id="geolocate" class="location-button">
-        <span class="coordinates">[ USE CURRENT LOCATION ]</span>
-      </button>
+    <div class="form-group" style="display: flex; align-items: center; gap: 5px; margin-top: 15px;">
+      <p style="margin: 0;"><strong>Click on the map above</strong> or</p>
+      <button type="button" id="geolocate" class="inline-link">use current location</button>
     </div>
     
-    <div class="wireframe-box" style="margin: 2rem 0;">
-      <div class="technical-label">DESCRIPTIVE DATA</div>
-      <div class="form-group">
-        <label for="note">INCIDENT DETAILS:</label>
-        <textarea id="note" name="note" placeholder="Provide any relevant details about the waste sighting (size, condition, location context, etc.)"></textarea>
-      </div>
-    </div>
-    
+    <p><br>Incident details if you'd like:</p>
     <div class="form-group">
-      <button type="submit">SUBMIT REPORT</button>
+      <textarea id="note" name="note" placeholder="Seriously you can leave this blank"></textarea>
+    </div>
+    <br>
+    <div class="form-group">
+      <button type="submit" class="styled-button">SUBMIT (I solemnly swear that I have witnessed this in the last 24 hours.)</button>
     </div>
   </form>
 </div>
@@ -65,13 +53,9 @@
   </div>
 </div>
 
-<script src="/js/map.js"></script>
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-    // Get the MapTiler API key
-    const mapTilerApiKey = '<%= mapTilerApiKey %>';
-    
-    // Initialize the selection map with the MapTiler API key
-    initSelectionMap(mapTilerApiKey);
+    // Initialize the selection map
+    initSelectionMap();
   });
 </script> 

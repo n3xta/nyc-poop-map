@@ -1,22 +1,40 @@
 window.onload = () => {
-  console.log('script has loaded')
+  console.log('script has loaded');
+  
+  // Navigation highlighting code
+  const currentPath = window.location.pathname;
+  
+  // Select all nav links
+  const navLinks = document.querySelectorAll('.nav-link');
+  
+  // Loop through each link
+  navLinks.forEach(link => {
+    const linkPath = link.getAttribute('href');
+    
+    // If the link path matches the current path (or both are home)
+    if (linkPath === currentPath || (linkPath === '/' && currentPath === '/')) {
+      // Add the active class
+      link.classList.add('nav-link-active');
+    }
+  });
 };
 
+// MapTiler API key hardcoded directly in the JS file
+const MAPTILER_API_KEY = 'SDAH1HS7z8VGHOhYwhFv';
 
 // Map creation and initialization for the map page
-function initMap(poopData, mapTilerApiKey) {
+function initMap(poopData) {
   // Center on Brooklyn, NY
   const brooklynCoords = [40.6782, -73.9442];
   
   // Set MapTiler API key
-  maptilersdk.config.apiKey = mapTilerApiKey;
+  maptilersdk.config.apiKey = MAPTILER_API_KEY;
   
   // Create map centered on Brooklyn
   const map = L.map('map').setView(brooklynCoords, 13);
   
-  // Add MapTiler layer with custom toner-v2 style
   L.maptilerLayer({
-    style: `https://api.maptiler.com/maps/toner-v2/style.json?key=${mapTilerApiKey}`
+    style: `https://api.maptiler.com/maps/toner-v2/style.json?key=${MAPTILER_API_KEY}`
   }).addTo(map);
   
   // Custom poop icon
@@ -40,19 +58,19 @@ function initMap(poopData, mapTilerApiKey) {
 }
 
 // Map for location selection on the submit page
-function initSelectionMap(mapTilerApiKey) {
+function initSelectionMap() {
   // Center on Brooklyn, NY
   const brooklynCoords = [40.6782, -73.9442];
   
   // Set MapTiler API key
-  maptilersdk.config.apiKey = mapTilerApiKey;
+  maptilersdk.config.apiKey = MAPTILER_API_KEY;
   
   // Create map centered on Brooklyn
   const map = L.map('selection-map').setView(brooklynCoords, 13);
   
   // Add MapTiler layer with custom toner-v2 style
   L.maptilerLayer({
-    style: `https://api.maptiler.com/maps/toner-v2/style.json?key=${mapTilerApiKey}`
+    style: `https://api.maptiler.com/maps/toner-v2/style.json?key=${MAPTILER_API_KEY}`
   }).addTo(map);
   
   // Create a marker that will be movable
